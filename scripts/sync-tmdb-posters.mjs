@@ -13,6 +13,10 @@ const manualTmdbIds = {
   'spider-man': 557,
   'spider-man-2': 558,
   'spider-man-3': 559,
+  'x-men': 36657,
+  'fantastic-four-2015': 166424,
+  daredevil: 9480,
+  punisher: 7220,
 };
 
 for (const entry of entries) {

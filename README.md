@@ -1,43 +1,16 @@
-# Astro Starter Kit: Minimal
+# Road to Doomsday
 
-```sh
-npm create astro@latest -- --template minimal
-```
+Checklist cronológico de películas y series esenciales antes de *Avengers: Doomsday*.
 
-> 🧑‍🚀 **Seasoned astronaut?** Delete this file. Have fun!
+## Posters TMDB
 
-## 🚀 Project Structure
+Los posters se sirven desde la CDN de TMDB. La API key solo se utiliza para sincronizar rutas durante el desarrollo o CI y nunca se expone al navegador.
 
-Inside of your Astro project, you'll see the following folders and files:
+1. Crea un Read Access Token en [TMDB](https://www.themoviedb.org/settings/api).
+2. Copia `.env.example` a `.env` y define `TMDB_API_TOKEN`.
+3. Ejecuta `npm run sync:posters`.
+4. Ejecuta `npm run build`.
 
-```text
-/
-├── public/
-├── src/
-│   └── pages/
-│       └── index.astro
-└── package.json
-```
+El archivo `src/data/tmdb-posters.ts` contiene únicamente rutas públicas de imágenes y puede versionarse. Si una entrada no tiene coincidencia, la app conserva el fallback configurado en el catálogo.
 
-Astro looks for `.astro` or `.md` files in the `src/pages/` directory. Each page is exposed as a route based on its file name.
-
-There's nothing special about `src/components/`, but that's where we like to put any Astro/React/Vue/Svelte/Preact components.
-
-Any static assets, like images, can be placed in the `public/` directory.
-
-## 🧞 Commands
-
-All commands are run from the root of the project, from a terminal:
-
-| Command                   | Action                                           |
-| :------------------------ | :----------------------------------------------- |
-| `npm install`             | Installs dependencies                            |
-| `npm run dev`             | Starts local dev server at `localhost:4321`      |
-| `npm run build`           | Build your production site to `./dist/`          |
-| `npm run preview`         | Preview your build locally, before deploying     |
-| `npm run astro ...`       | Run CLI commands like `astro add`, `astro check` |
-| `npm run astro -- --help` | Get help using the Astro CLI                     |
-
-## 👀 Want to learn more?
-
-Feel free to check [our documentation](https://docs.astro.build) or jump into our [Discord server](https://astro.build/chat).
+La aplicación debe incluir atribución visible a TMDB en producción, de acuerdo con sus términos de uso.

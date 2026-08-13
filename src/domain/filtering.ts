@@ -12,6 +12,7 @@ export function filterContents(contents: MarvelContent[], filters: FilterState, 
 }
 
 export function sortContents(contents: MarvelContent[], mode: SortMode) {
-  const key = mode === 'narrative' ? 'narrativeOrder' : mode === 'chronological' ? 'chronologicalOrder' : 'releaseYear';
+  if (mode === 'release') return [...contents].sort((a, b) => a.releaseDate.localeCompare(b.releaseDate) || a.narrativeOrder - b.narrativeOrder);
+  const key = mode === 'narrative' ? 'narrativeOrder' : 'chronologicalOrder';
   return [...contents].sort((a, b) => a[key] - b[key] || a.narrativeOrder - b.narrativeOrder);
 }

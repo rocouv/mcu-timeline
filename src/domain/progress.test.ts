@@ -3,9 +3,9 @@ import { calculateProgress } from './progress';
 import type { MarvelContent } from './content';
 
 const contents: MarvelContent[] = [
-  { id: 'movie', title: 'Movie', type: 'movie', universe: 'MCU', phase: 'Test', releaseYear: 2020, chronologicalOrder: 1, narrativeOrder: 1, runtimeMinutes: 120, essential: true, importance: 'essential', availability: 'released' },
-  { id: 'series', title: 'Series', type: 'series', universe: 'MCU', phase: 'Test', releaseYear: 2021, chronologicalOrder: 2, narrativeOrder: 2, runtimeMinutes: 240, episodes: 6, essential: false, importance: 'recommended', availability: 'released' },
-  { id: 'upcoming', title: 'Upcoming', type: 'movie', universe: 'MCU', phase: 'Test', releaseYear: 2026, chronologicalOrder: 3, narrativeOrder: 3, runtimeMinutes: null, essential: true, importance: 'essential', availability: 'upcoming' },
+  { id: 'movie', title: 'Movie', type: 'movie', universe: 'MCU', phase: 'Test', releaseYear: 2020, releaseDate: '2020-01-01', posterUrl: '', chronologicalOrder: 1, narrativeOrder: 1, runtimeMinutes: 120, essential: true, importance: 'essential', availability: 'released' },
+  { id: 'series', title: 'Series', type: 'series', universe: 'MCU', phase: 'Test', releaseYear: 2021, releaseDate: '2021-01-01', posterUrl: '', chronologicalOrder: 2, narrativeOrder: 2, runtimeMinutes: 240, episodes: 6, essential: false, importance: 'recommended', availability: 'released' },
+  { id: 'upcoming', title: 'Upcoming', type: 'movie', universe: 'MCU', phase: 'Test', releaseYear: 2026, releaseDate: '2026-01-01', posterUrl: '', chronologicalOrder: 3, narrativeOrder: 3, runtimeMinutes: null, essential: true, importance: 'essential', availability: 'upcoming' },
 ];
 
 describe('calculateProgress', () => {

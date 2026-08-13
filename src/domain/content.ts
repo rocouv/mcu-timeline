@@ -10,6 +10,9 @@ export interface MarvelContent {
   universe: string;
   phase: string;
   releaseYear: number;
+  releaseDate: string;
+  posterUrl: string;
+  tmdbId?: number;
   chronologicalOrder: number;
   narrativeOrder: number;
   runtimeMinutes: number | null;

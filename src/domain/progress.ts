@@ -15,7 +15,8 @@ export interface ProgressSummary {
   weeksRemaining: number;
 }
 
-export const DOOMSDAY_DATE = new Date('2026-12-18T00:00:00');
+export const DOOMSDAY_RELEASE_DATE = '2026-12-18';
+export const DOOMSDAY_DATE = new Date(`${DOOMSDAY_RELEASE_DATE}T00:00:00`);
 
 export function getWeeksUntilDoomsday(today = new Date()): number {
   const days = Math.max(0, (DOOMSDAY_DATE.getTime() - today.getTime()) / 86400000);

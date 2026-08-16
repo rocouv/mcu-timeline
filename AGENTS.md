@@ -1,5 +1,7 @@
 ## Development
 
+Use Bun for dependency installation and project scripts. Do not use npm or create a `package-lock.json`.
+
 When starting the dev server, use background mode:
 
 ```

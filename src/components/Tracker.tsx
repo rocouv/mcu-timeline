@@ -5,6 +5,7 @@ import { defaultFilters, type FilterState, type SortMode } from '../domain/conte
 import { calculateProgress, DOOMSDAY_DATE, formatHours } from '../domain/progress';
 import { filterContents, sortContents } from '../domain/filtering';
 import { readTrackerState, writeTrackerState, type StoredTrackerState } from '../services/tracker-storage';
+import Countdown from './Countdown';
 import '../styles/tracker.css';
 
 const initialState: StoredTrackerState = { watchedIds: [], filters: defaultFilters, sortMode: 'narrative', theme: 'dark' };
@@ -38,7 +39,7 @@ export default function Tracker() {
   return <main className="tracker-shell">
     <header className="hero">
       <div className="hero-topline"><span className="eyebrow">ARCHIVO MULTIVERSAL · 001</span><button className="theme-toggle" type="button" onClick={() => setState((current) => ({ ...current, theme: current.theme === 'dark' ? 'light' : 'dark' }))} aria-pressed={state.theme === 'dark'} aria-label={`Cambiar a tema ${state.theme === 'dark' ? 'claro' : 'oscuro'}`}>{state.theme === 'dark' ? '☼ Claro' : '◐ Oscuro'}</button></div>
-      <div className="hero-grid"><div><p className="kicker">La ruta antes de que todo colapse</p><h1>Road to<br /><em>Doomsday.</em></h1></div><div className="hero-note"><span className="orbit-mark">◎</span><p>Una guía curada para atravesar las líneas temporales esenciales antes del <strong>{formatDate(DOOMSDAY_DATE)}</strong>.</p><span className="scroll-hint">SCROLL TO EXPLORE ↓</span></div></div>
+      <div className="hero-grid"><div><p className="kicker">La ruta antes de que todo colapse</p><h1>Road to<br /><em>Doomsday.</em></h1></div><div className="hero-note"><span className="orbit-mark">◎</span><Countdown /><p>La cuenta regresiva ha comenzado. El tiempo se agota antes del <strong>{formatDate(DOOMSDAY_DATE)}</strong>. Dr. Doom está llegando a nuestro universo.</p><span className="scroll-hint">SCROLL TO EXPLORE ↓</span></div></div>
       <div className="hero-footer"><span><b>{marvelContent.length}</b> archivos indexados</span><span><b>{stageOrder.length}</b> etapas narrativas</span><span><b>616</b> universo base</span></div>
     </header>
 
